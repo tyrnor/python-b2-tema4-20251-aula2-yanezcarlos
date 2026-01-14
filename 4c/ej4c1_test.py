@@ -27,14 +27,15 @@ def test_calculate_rectangle_area():
     # Write here your code
 
     # Change the following line
-    assert False
+    assert calculate_rectangle_area(5, 10) == 50
     
 def test_value_error_calculate_rectangle_area():
     # Prueba con ancho/alto negativo.
     # Write here your code
     
     # Change the following line
-    assert False
+    with pytest.raises(ValueError, match="Width and height must be non-negative."):
+        calculate_rectangle_area(-5, 10)
     
 
 def test_type_error_calculate_rectangle_area():
@@ -42,4 +43,5 @@ def test_type_error_calculate_rectangle_area():
     # Write here your code
     
     # Change the following line
-    assert False
+    with pytest.raises(TypeError, match="Width and height must be numbers."):
+        calculate_rectangle_area("five", 10)
